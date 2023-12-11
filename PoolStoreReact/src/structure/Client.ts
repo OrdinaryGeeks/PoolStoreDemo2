@@ -61,6 +61,11 @@ const Item = {
   updateItem: (values: object, index:number) => requests.put("items/" + index, values),
 };
 
+const Account = {
+  login: (values: any) => requests.post("account/login", values),
+  register: (values: any) => requests.post("account/register", values),
+  currentUser: () => requests.get("account/currentUser"),
+};
 const Location = {
   getLocation: (value: number) => requests.get("locations" + value),
   createLocation: (values: object) => requests.post("locations", values),
@@ -122,6 +127,7 @@ const agent = {
   MaintenanceDate,
   MaintenanceItem,
   MaintenanceMan,
+  Account,
 };
 
 export default agent;

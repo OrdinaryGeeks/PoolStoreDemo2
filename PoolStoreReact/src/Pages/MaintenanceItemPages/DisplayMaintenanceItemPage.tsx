@@ -5,7 +5,7 @@ import {
   useAppSelector,
 } from "../../structure/Store/ConfigureStore";
 
-export default function DisplayMaintenanceDatesPage() {
+export default function DisplayMaintenanceItemsPage() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {

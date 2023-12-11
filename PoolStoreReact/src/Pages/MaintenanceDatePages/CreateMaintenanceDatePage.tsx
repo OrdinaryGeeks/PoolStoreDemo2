@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-export default function CreatemaintenanceDatePage() {
+export default function CreateMaintenanceDatePage() {
 const dispatch = useAppDispatch();
 
 const [maintenanceManId, setMaintenanceManId] = useState(0);
@@ -51,6 +51,7 @@ useEffect(() => {
         <Form.Control type="text" placeholder="Enter Maintenance Date Day" onChange={(e) => {  let parsedInt = Number.parseInt(e.target.value);  if(!isNaN(parsedInt))setDay(parsedInt)}}
                           value={day} />
     </Form.Group>
+    <Form.Label>Maintenance Date Hour</Form.Label>
         <Form.Control type="text" placeholder="Enter Maintenance Date Hour" onChange={(e) => {  let parsedInt = Number.parseInt(e.target.value);  if(!isNaN(parsedInt))setHour(parsedInt)}}
 value={hour}/>
         <Form.Group className="mb-3" controlId="formMaintenanceManId">

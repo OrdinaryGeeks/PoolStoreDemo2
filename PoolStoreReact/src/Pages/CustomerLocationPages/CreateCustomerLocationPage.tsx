@@ -46,7 +46,7 @@ useEffect(() => {
     </Form.Group>
     <Form.Group className="mb-3" controlId="formLocationId">
         <Form.Label>Location Id</Form.Label>
-        <Form.Control type="text" placeholder="Choose Location Id" onChange={(e) => {  let parsedInt = Number.parseInt(e.target.value);  if(!isNaN(parsedInt))setLocationId(parsedInt)}} value={customerId}></Form.Control>
+        <Form.Control type="text" placeholder="Choose Location Id" onChange={(e) => {  let parsedInt = Number.parseInt(e.target.value);  if(!isNaN(parsedInt))setLocationId(parsedInt)}} value={locationId}></Form.Control>
     </Form.Group>
     <Form.Group className="mb-3" controlId="formStreetAddress">
         <Form.Label>Street Address</Form.Label>

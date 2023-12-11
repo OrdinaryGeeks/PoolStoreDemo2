@@ -8,6 +8,7 @@ import { maintenanceSlice } from "../../Slices/MaintenanceSlice";
 import { maintenanceDateSlice } from "../../Slices/MaintenanceDateSlices";
 import { maintenanceManSlice } from "../../Slices/MaintenanceManSlice";
 import { maintenanceItemSlice } from "../../Slices/MaintenanceItemSlice";
+import { accountSlice } from "../../Slices/AccountSlice";
 
 export const store = configureStore({
   reducer: {
@@ -18,7 +19,8 @@ export const store = configureStore({
     maintenance: maintenanceSlice.reducer,
     maintenanceDate: maintenanceDateSlice.reducer,
     maintenanceItem: maintenanceItemSlice.reducer,
-    maintenanceMan: maintenanceManSlice.reducer
+    maintenanceMan: maintenanceManSlice.reducer,
+    account:accountSlice.reducer,
   },
 });
 

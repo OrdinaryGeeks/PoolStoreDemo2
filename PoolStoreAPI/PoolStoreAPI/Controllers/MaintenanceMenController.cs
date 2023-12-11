@@ -27,6 +27,16 @@ namespace PoolStoreAPI.Controllers
             return await _context.MaintenanceMan.ToListAsync();
         }
 
+        [HttpGet("MaintenanceManAvailability/{MaintenanceManId}")]
+        public async Task<ActionResult<MaintenanceDate[]>>GetMaintenanceManAvailability(int MaintenanceManId){
+
+
+           return await _context.MaintenanceDate.Where(dateMaintenance => (dateMaintenance.MaintenanceManId == MaintenanceManId)).ToArrayAsync<MaintenanceDate>();
+
+        }
+
+       
+
         // GET: api/MaintenanceMen/5
         [HttpGet("{id}")]
         public async Task<ActionResult<MaintenanceMan>> GetMaintenanceMan(int id)
@@ -103,5 +113,19 @@ namespace PoolStoreAPI.Controllers
         {
             return _context.MaintenanceMan.Any(e => e.Id == id);
         }
-    }
+    
+
+     [HttpGet("MaintenanceItemsAssigned/{MaintenanceManId}")]
+        public async Task<ActionResult<MaintenanceItem[]>>GetMaintenanceItemsByMaintenanceManId(int MaintenanceManId){
+
+
+          List<int> maintenanceIds =  await  _context.Maintenance.Where(d => d.MaintenanceManId == MaintenanceManId).Select(d => d.Id).ToListAsync<int>();
+
+          return await _context.MaintenanceItem.Where(d => maintenanceIds.Contains(d.MaintenanceId)).ToArrayAsync();
+        }
+
+        
+
+    
+}
 }
