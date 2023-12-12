@@ -24,9 +24,7 @@ public DBContext(DbContextOptions options):base(options){
             base.OnModelCreating(builder);
 
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "Member", NormalizedName = "MEMBER" },
-            new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" },
-            new IdentityRole {Name="Maintenance", NormalizedName="MAINTENANCE"},
-            new IdentityRole {Name="Customer", NormalizedName="CUSTOMER"}
+            new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" }
             );
         }
 

@@ -5,11 +5,21 @@ namespace PoolStoreAPI.Models
 {
     public class DBInitializer
     {
-        public static async Task Initialize(DBContext context, UserManager<User> userManager)
+        
+        public static async Task Initialize(DBContext context, RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
 
 
+            
 
+
+            if (!await roleManager.RoleExistsAsync("Maintenance"))
+                await roleManager.CreateAsync(new IdentityRole("Maintenance"));
+
+            if (!await roleManager.RoleExistsAsync("Customer"))
+                await roleManager.CreateAsync(new IdentityRole("Customer"));
+
+           
             if (!userManager.Users.Any())
             {
                 var user = new User

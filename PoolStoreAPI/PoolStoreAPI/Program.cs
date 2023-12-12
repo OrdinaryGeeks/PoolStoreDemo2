@@ -65,10 +65,11 @@ var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<DBContext>();
 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
 var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 try
 {
     await context.Database.MigrateAsync();
-    await DBInitializer.Initialize(context, userManager);
+    await DBInitializer.Initialize(context,roleManager, userManager);
 }
 catch (Exception ex)
 {

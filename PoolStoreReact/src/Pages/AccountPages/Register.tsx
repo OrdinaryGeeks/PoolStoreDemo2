@@ -127,9 +127,9 @@ export default function Register() {
   
   <FormGroup>
   <FormControlLabel control={<Checkbox defaultChecked disabled {...register("memberCheck")} />} label="Member" />
-  <FormControlLabel control={<Checkbox {...register("customerCheck")}/>} label="Customer" />
-  <FormControlLabel control={<Checkbox {...register("adminCheck")}/>} label="Admin" />
-  <FormControlLabel control={<Checkbox {...register("maintenanceCheck")}/>} label="Maintenance" />
+  <FormControlLabel control={<Checkbox {...register("customer")}/>} label="Customer" />
+  <FormControlLabel control={<Checkbox {...register("admin")}/>} label="Admin" />
+  <FormControlLabel control={<Checkbox {...register("maintenance")}/>} label="Maintenance" />
 </FormGroup>
 </FormControl>
         <Button

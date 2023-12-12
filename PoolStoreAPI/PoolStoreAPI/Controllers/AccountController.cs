@@ -22,6 +22,7 @@ namespace PoolStoreAPI.Controllers
 
         UserManager<User> _userManager;
         TokenService _tokenService;
+        //RoleManager _roleManager;
         public AccountController(UserManager<User> userManager, TokenService tokenService)
         {
             _userManager = userManager;
@@ -62,6 +63,7 @@ namespace PoolStoreAPI.Controllers
             }
 
             List<string> roles = new List<string>();
+            
             if(registerDTO.Customer)
             roles.Add("Customer");
             if(registerDTO.Maintenance)
