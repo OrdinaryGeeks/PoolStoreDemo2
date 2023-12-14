@@ -9,8 +9,9 @@ interface Props {
 export default function RequireAuth({roles}: Props) {
     const {user} = useAppSelector(state => state.account);
     const location = useLocation();
-
+    alert("Require Auth");
     if (!user) {
+        alert("NO USER");
         return <Navigate to='/login' state={{from: location}} />
     }
 
